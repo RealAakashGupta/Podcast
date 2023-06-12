@@ -3,20 +3,24 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom';
 
 const Container = styled.div`
-  width: 290px;
-  margin-bottom: 45px;
+  width: ${(props)=>props.type !== "sm" ? "290px" : "300px"};
+  margin-bottom: ${(props)=>props.type === "sm" ? "10px" : "45px"};
   cursor: pointer;
+  display: ${(props)=>props.type === "sm" && "flex"};
+  gap: 10px;
 `;
 const Image = styled.img`
-  width: 95%;
-  height: 170px;
+  width: ${(props)=>props.type !== "sm" ? "95%" : "100%"};
+  height: ${(props)=>props.type === "sm" ? "120px" : "170px"};
   background-color: #999;
+  flex: 1;
 `;
 
 const Details = styled.div`
   display = flex;
-  margin-top: 16px;
+  margin-top: ${(props)=>props.type !== "sm" && "16px"};
   gap: 12px;
+  flex: 1;
 `;
 
 const ChannelImage = styled.img`
@@ -24,6 +28,7 @@ const ChannelImage = styled.img`
   height: 36px;
   border-radius: 50%;
   background-color: #999;
+  display: ${(props)=>props.type === "sm" && "none"};
 `;
 
 const Texts = styled.div`
@@ -40,21 +45,22 @@ const ChannelName = styled.h2`
   color: ${({ theme }) => theme.textSoft};
 `;
 const Info = styled.div`
-  font-size: 14px;
+  font-size: ${(props)=>props.type !== "sm" ? "14px" : "11px"};
   color: ${({ theme }) => theme.textSoft};
   
 `;
 
-const Card = () => {
+const Card = ({type}) => {
   return (
     <Link to="/podcast/test" style={{textDecoration:"none"}}>
-    <Container><Image src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjQj5EcguYZuCRq57KNddk-ednw_PjYWOyVQ&usqp=CAU'/>
-    <Details>
-    <ChannelImage src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc8tQbVwD-HqBIsnk82HAAjq36qMxNdvcosQ&usqp=CAU'/>
+    <Container type={type}>
+      <Image type={type} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjQj5EcguYZuCRq57KNddk-ednw_PjYWOyVQ&usqp=CAU'/>
+    <Details type={type}>
+    <ChannelImage type={type} src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc8tQbVwD-HqBIsnk82HAAjq36qMxNdvcosQ&usqp=CAU'/>
     <Texts>
       <Title>Test Podcast</Title>
       <ChannelName>FLIPR</ChannelName>
-      <Info>660,908 views ● 1 day ago</Info>
+      <Info type={type}>660,908 views ● 1 day ago</Info>
     </Texts>
     </Details>
     </Container>

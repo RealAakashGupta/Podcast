@@ -5,6 +5,7 @@ import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import ShareIcon from '@mui/icons-material/Share';
 import LibraryAddIcon from '@mui/icons-material/LibraryAdd';
+import Card from '../components/Card';
 
 const Container = styled.div` 
   display: flex; 
@@ -137,7 +138,19 @@ const Podcast = () => {
         </Channel>
         
       </Content>
-      <Recommendation>Recommendation</Recommendation>
+      <Recommendation>
+        <Card type ="sm"/>
+        <Card type ="sm"/>
+        <Card type ="sm"/>
+        <Card type ="sm"/>
+        <Card type ="sm"/>
+        <Card type ="sm"/>
+        <Card type ="sm"/>
+        <Card type ="sm"/>
+        <Card type ="sm"/>
+        <Card type ="sm"/>
+        <Card type ="sm"/>
+      </Recommendation>
     </Container>
   )
 }

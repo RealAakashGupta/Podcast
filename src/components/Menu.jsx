@@ -47,6 +47,10 @@ const Item = styled.div`
     gap: 10px;
     cursor: pointer;
     padding: 7.5px 0px;
+
+    &:hover{
+        background-color: ${({theme}) => theme.navbar};
+    }
 `;
 
 const Login = styled.div`
