@@ -92,10 +92,12 @@ const Menu = ({darkMode, setDarkMode}) => {
                 ListenUp
             </Logo>
             </Link>
+            <Link to="/" style={{textDecoration:"none", color:"inherit"}}>
             <Item>
                 <HomeIcon/>
                 Home
             </Item>
+            </Link>
             <Item>
                 <DiscoverIcon/>
                 Discover
