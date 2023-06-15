@@ -1,13 +1,13 @@
-import React from 'react'
-import styled from 'styled-components'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import SearchIcon from '@mui/icons-material/Search';
-import { Link } from 'react-router-dom';
+import React from "react";
+import styled from "styled-components";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import SearchIcon from "@mui/icons-material/Search";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   position: sticky;
   top: 0;
-  background-color: ${({theme}) => theme.navbar};
+  background-color: ${({ theme }) => theme.navbar};
   height: 50px;
 `;
 const Wrapper = styled.div`
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
   height: 100%;
   padding: 0px 20px;
   position: relative;
-`; 
+`;
 const Search = styled.div`
   width: 40%;
   position: absolute;
@@ -28,26 +28,30 @@ const Search = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 5px;
-  border: 1px solid ${({theme}) => theme.text};
+  border: 1px solid ${({ theme }) => theme.text};
   border-radius: 3px;
-  
 `;
 const Input = styled.input`
   border: none;
   background-color: transparent;
-  color: ${({theme}) => theme.text};
+  color: ${({ theme }) => theme.text};
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
 `;
 const Button = styled.button`
-    padding: 5px 10px;
-    background-color: #E3F4F4;
-    border: 1px solid  #526D82;
-    color: #27374D;
-    border-radius: 3px;
-    font-weight: 500;
-    cursor: pointer;
-    align-items: center;
-    display: flex;
-    gap: 5px;
+  padding: 5px 10px;
+  background-color: #e3f4f4;
+  border: 1px solid #526d82;
+  color: #27374d;
+  border-radius: 3px;
+  font-weight: 500;
+  cursor: pointer;
+  align-items: center;
+  display: flex;
+  gap: 5px;
 `;
 
 const Navbar = () => {
@@ -55,15 +59,18 @@ const Navbar = () => {
     <Container>
       <Wrapper>
         <Search>
-          <Input placeholder='Search'/>
-          <SearchIcon/>
+          <Input placeholder="Search" />
+          <SearchIcon />
         </Search>
-        <Link to="signin" style={{textDecoration:"none"}}>
-        <Button><AccountCircleIcon/>Sign In</Button>
+        <Link to="signin" style={{ textDecoration: "none" }}>
+          <Button>
+            <AccountCircleIcon />
+            Sign In
+          </Button>
         </Link>
       </Wrapper>
     </Container>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
