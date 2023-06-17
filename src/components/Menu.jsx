@@ -82,7 +82,7 @@ const Title = styled.h2`
   font-size: 14px;
   font-weight: 500;
   color: ${({ theme }) => theme.text};
-  margin-bootom: 20px;
+  margin-bottom: 20px;
 `;
 
 const Menu = ({ darkMode, setDarkMode }) => {

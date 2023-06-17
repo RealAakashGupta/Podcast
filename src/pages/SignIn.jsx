@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const Container = styled.div`
 display: flex;
@@ -30,6 +31,12 @@ const SubHeading = styled.h2`
     margin: 0px ;
 `;
 
+const SmallHeading = styled.h2`
+    font-size: 13px; /* Decreased font size */
+    font-weight: 300;
+    margin: 20px 0px 0px; /* Added 20px top margin */
+`;
+
 const Input = styled.input`
     border: 1px solid ${({theme}) => theme.hr};
     border-radius: 3px;
@@ -58,12 +65,11 @@ const SignIn = () => {
         <Input placeholder='username'/>
         <Input type='password' placeholder='password'/> 
         <Button>Sign In</Button> 
-        <Title>OR</Title>
-        <SubHeading>Create an Account</SubHeading> 
-        <Input placeholder='username'/>
-        <Input placeholder='email'/>
-        <Input type='password' placeholder='password'/> 
-        <Button>Sign Up</Button>
+        
+        <SmallHeading>Don't have an account yet?</SmallHeading>
+        <Link to="signup" style={{ textDecoration: "none" }}>
+        <Button>Create an Account</Button>
+        </Link>
     </Wrapper></Container>
   )
 }

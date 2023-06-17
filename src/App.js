@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './pages/Home';
 import Podcast from './pages/Podcast';
 import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
 
 const Container = styled.div`
   display: flex
@@ -34,6 +35,7 @@ function App() {
                 <Route path="/">
                   <Route index element={<Home />} />
                   <Route path="signin" element={<SignIn />} />
+                  <Route path="/signin/signup" element={<SignUp />} />
                   <Route path="podcast">
                     <Route path=":id" element={< Podcast/>} />
                   </Route>
